@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hello-html-config
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Hello from Argo CD!</title>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <p>This application was deployed using Argo CD.</p>
+    </body>
+    </html>
