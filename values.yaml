@@ -72,7 +72,7 @@ configs:
     controller.self.heal.timeout.seconds: 5
     controller.repo.server.timeout.seconds: 60
     controller.sync.timeout.seconds: 0
-    server.insecure: false
+    server.insecure: true
     server.basehref: /
     server.rootpath: ''
     server.staticassets: /shared/app
@@ -724,11 +724,11 @@ server:
     labels: {}
     automountServiceAccountToken: true
   ingress:
-    enabled: false
+    enabled: true
     controller: generic
     labels: {}
     annotations: {}
-    ingressClassName: ""
+    ingressClassName: "nginx"
     hostname: ""
     path: /
     pathType: Prefix

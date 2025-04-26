@@ -1,11 +1,17 @@
 # k8s-argocd
 
+Conecte no k8s-node-0 e faça o download do values.yaml
+
 ```bash
+mkdir argocd
+cd  argocd
+wget https://raw.githubusercontent.com/marcosfs68/k8s-argocd/refs/heads/main/values.yaml
+
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
 helm dependency build
 
-helm install my-argo-cd . -n argocd --create-namespace -f values.yaml
+helm install argo-cd . -n argocd --create-namespace -f values.yaml
 ```
 
 This is based from this [Chart.yaml](https://github.com/argoproj/argo-helm/tree/argo-cd-7.8.27/charts/argo-cd).
