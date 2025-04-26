@@ -39,3 +39,9 @@ zAATv23vgPwWvbHP
 ```bash
 kubectl apply -f restrict-default-project.yaml
 ```
+
+## Create cluster-addons project
+
+```bash
+kubectl apply -f project-cluster-addons.yaml
+```
