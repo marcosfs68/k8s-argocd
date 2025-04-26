@@ -4,17 +4,14 @@ Conecte no k8s-node-0 e faça o download do values.yaml
 
 ```bash
 mkdir argocd
-cd  argocd
-wget https://raw.githubusercontent.com/marcosfs68/k8s-argocd/refs/heads/main/values.yaml
+wget https://raw.githubusercontent.com/marcosfs68/k8s-argocd/refs/heads/main/argocd/values.yaml -O argocd/values.yaml
+wget https://raw.githubusercontent.com/marcosfs68/k8s-argocd/refs/heads/main/argocd/Charts.yaml -O argocd/Charts.yaml
 
 helm repo add argo https://argoproj.github.io/argo-helm
-helm repo update
-helm dependency build
-
-helm install argo-cd . -n argocd --create-namespace -f values.yaml
+helm upgrade --install argo-cd argocd -n argocd --create-namespace -f values.yaml
 ```
 
-This is based from this [Chart.yaml](https://github.com/argoproj/argo-helm/tree/argo-cd-7.8.27/charts/argo-cd).
+This is based from this [Chart.yaml](https://github.com/argoproj/argo-helm/blob/argo-cd-7.8.28/README.md).
 
 ```bash
 helm upgrade -i my-argo-cd argo/argo-cd -n argocd --create-namespace \
@@ -37,3 +34,4 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 ```
 
 8225aY6u4utkDRrX
+
