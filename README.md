@@ -37,5 +37,5 @@ zAATv23vgPwWvbHP
 ## Disable deploy to default project
 
 ```bash
-kubectl apply -f 
+kubectl apply -f restrict-default-project.yaml
 ```
